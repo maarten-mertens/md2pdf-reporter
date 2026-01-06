@@ -1,0 +1,30 @@
+name: Markdown naar PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  convert-to-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: Map aanmaken voor output
+        run: mkdir -p output
+
+      - name: Pandoc conversie
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >-
+            --standalone
+            --output=output/rapport.pdf
+            input.md
+
+      - name: PDF opslaan als Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapport-pdf
+          path: output/rapport.pdf
