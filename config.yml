@@ -1,0 +1,19 @@
+pandoc:
+  template: eisvogel
+  highlight_style: breezedark
+  toc: true
+  toc_depth: 6
+  number_sections: true
+  top_level_division: chapter
+
+paths:
+  resource_path: ./resources
+  templates: ./templates
+
+output:
+  pdf_name: report.pdf
+  archive: true
+
+metadata:
+  title: "Report"
+  author: "Your Name"
