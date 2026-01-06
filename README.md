@@ -1,2 +1,4 @@
 # md2pdf-reporter
-A generic, config-driven CLI tool to generate professional PDF reports from Markdown using Pandoc.
+mdreporter is a lightweight CLI tool for generating professional PDF reports from Markdown.
+It uses Pandoc and a YAML configuration file to keep report logic and configuration cleanly separated.
+
